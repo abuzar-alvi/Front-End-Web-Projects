@@ -1,0 +1,29 @@
+.px-btn {
+	padding: 12px 28px;
+	border: 2px solid transparent;
+	font-size: 16px;
+	line-height: 1.5;
+	text-decoration: none;
+	font-weight: 600;
+	transition: ease all 0.35s;
+	display: inline-block;
+	&.px-btn-theme {
+		background: $px-theme;
+		border-color: $px-theme;
+		color: $px-white;
+		&:hover {
+			background: $px-dark;
+			border-color: $px-dark;
+		}
+	}
+	&.px-btn-theme2 {
+		background: $px-theme2;
+		border-color: $px-dark;
+		color: $px-dark;
+		&:hover {
+			background: $px-dark;
+			border-color: $px-dark;
+			color: $px-white;
+		}
+	}
+}

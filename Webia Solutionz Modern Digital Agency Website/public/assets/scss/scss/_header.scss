@@ -1,0 +1,62 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    border-bottom: 2px solid $px-dark;
+    background: $px-white;
+    .navbar {
+        padding: 15px 0;
+    }
+    .navbar-nav {
+        > li {
+            > .nav-link {
+                padding: 0 5px;
+                line-height: 55px;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: $px-dark;
+                span {
+                    padding: 9px 20px;
+                    border-radius: 30px;
+                }
+                &.active {
+                    span {
+                        background: $px-theme2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include down-md {
+    .main-header {
+        .navbar-toggler {
+            display: flex;
+            flex-direction: column;
+            border: none;
+            padding: 4px 9px;
+            outline: none;
+            box-shadow: none;
+            span {
+                width: 25px;
+                height: 2px;
+                background: $px-dark;
+                margin: 4px 0;
+            }
+        }
+        .navbar-collapse {
+            border-bottom: 2px solid $px-dark;
+            border-top: 2px solid $px-dark;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            background: $px-white;
+            right: 0px;
+        }
+    }
+}

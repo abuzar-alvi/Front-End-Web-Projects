@@ -1,0 +1,617 @@
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: inherit;
+    }
+}
+
+body {
+    font-family: $px-font;
+    font-weight: 400;
+    color: #555555;
+}
+
+img {
+    max-width: 100%;
+}
+
+* {
+    outline: none !important;
+}
+
+a {
+    color: $px-theme;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($px-theme, 8%);
+        text-decoration: none;
+    }
+}
+
+.container {
+    max-width: 1230px;
+}
+
+/* ----------------------
+*   Loading
+---------------------------*/
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $px-theme;
+    z-index: 99999;
+}
+
+.load-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+
+    span {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid $px-white;
+            border-color: $px-white transparent $px-white transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+    }
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* ----------------------
+*   owl 
+---------------------------*/
+.owl-dots {
+    text-align: center;
+
+    .owl-dot {
+        display: inline-block;
+        vertical-align: top;
+        width: 12px;
+        height: 12px;
+        background: transparent;
+        border: 1px solid $px-dark;
+        transition: ease all 0.55s;
+        border-radius: 50%;
+        margin: 0 4px;
+
+        &.active {
+            background: $px-dark;
+        }
+    }
+}
+
+.owl-carousel {
+    .owl-item {
+        img {
+            width: auto;
+            max-width: 100%;
+        }
+    }
+}
+
+
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+
+.section-heading {
+    padding-bottom: 45px;
+    h6 {
+        margin: 0 0 20px -10px;
+        @include down-md {
+            margin-left: 0;
+        }
+        span {
+            display: inline-block;
+            border: 1px solid $px-theme;
+            padding: 8px 20px;
+            color: $px-theme;
+            transform: rotate(-15deg);
+        }
+    }
+    h3 {
+        font-size: 55px;
+        margin: 0;
+        color: $px-dark;
+        @include down-md {
+            font-size: 45px;
+        }
+        @include down-sm {
+            font-size: 40px;
+        }
+        span {
+            position: relative;
+            display: inline;
+            vertical-align: top;
+            padding-bottom: 15px;
+            &:after {
+                content: "";
+                background-image: url(../img/title.svg);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 92px;
+                height: 14px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    p {
+        margin: 15px 0 0;
+        font-size: 18px;
+    }
+}
+
+/* Section
+---------------------*/
+.section {
+    padding: 100px 0;
+    position: relative;
+
+    @include down-md {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @include down-sm {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+
+/* Home 
+---------------------*/
+.home-section {
+    position: relative;
+    .effect-1 {
+        position: absolute;
+        top: 25%;
+        left: 2%;
+        @include down-sm {
+            display: none;
+        }
+    }
+    .effect-2 {
+        position: absolute;
+        bottom: 25%;
+        right: 2%;
+        @include down-sm {
+            display: none;
+        }
+    }
+    .min-vh-100 {
+        padding-top: 135px;
+        padding-bottom: 50px;
+        @include down-md {
+            padding-top: 75px;
+        }
+    }
+    .home-intro {
+        @include down-md {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h6 {
+            margin: 0 0 30px -10px;
+            @include down-sm {
+                margin: 0 0 15px;
+            }
+            span {
+                display: inline-block;
+                border: 1px solid $px-theme;
+                padding: 8px 20px;
+                color: $px-theme;
+                transform: rotate(-35deg);
+                @include down-sm {
+                    transform: rotate(0);
+                }
+            }
+        }
+        h1 {
+            font-size: 70px;
+            color: $px-dark;
+            line-height: 1.1;
+            margin: 0 0 25px;
+            @include down-sm {
+                font-size: 50px;
+                margin: 0 0 20px;
+            }
+        }
+        p {
+            font-size: 20px;
+            @include down-sm {
+                font-size: 18px;
+            }
+        }
+
+        .btn-bar {
+            padding-top: 20px;
+            @include down-sm {
+                padding-top: 10px;
+            }
+        }
+    }
+    .home-image {
+        @include down-md {
+            text-align: center;
+        }
+    }
+}
+
+/* feature 
+---------------------*/
+.feature-box-01 {
+    padding: 40px;
+    background: $px-white;
+    border: 2px solid $px-dark;
+    box-shadow: 0 0 0 0 $px-dark;
+    transition: ease all 0.35s;
+    @include down-sm {
+        padding: 30px;
+    }
+    &:hover {
+        box-shadow: 5px 5px 0 0 $px-dark;
+    }
+    .number {
+        font-size: 55px;
+        line-height: 1;
+        color: $px-dark;
+        font-weight: 600;
+        margin-bottom: 20px;
+        @include down-sm {
+            font-size: 40px;
+        }
+    }
+    h5 {
+        font-size: 22px;
+        color: $px-dark;
+        margin-bottom: 10px;
+        @include down-sm {
+            font-size: 20px;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    .icon {
+        margin-top: 25px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $px-theme2;
+        color: $px-dark;
+        font-size: 32px;
+    }
+}
+
+
+/* experience
+---------------------*/
+.experience-section {
+    .section-heading {
+        p {
+            max-width: 500px;
+        }
+    }
+}
+
+.skill-box {
+    h3 {
+        margin: 0 0 30px;
+        color: $px-dark;
+        font-size: 32px;
+        font-weight: 600;
+    }
+}
+
+.feature-box-02 {
+    padding: 15px;
+    border: 2px solid $px-dark;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0 0 $px-dark;
+    transition: ease all 0.35s;
+    @include down-sm {
+        padding: 10px;
+    }
+    &:hover {
+        box-shadow: 3px 3px 0 0 $px-dark;
+    }
+    .icon {
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        background: $px-theme;
+        color: $px-white;
+        font-size: 30px;
+        display: flex;
+        border-radius: 50%;
+    }
+    h6 {
+        color: $px-dark;
+        margin: 0;
+        padding-left: 15px;
+    }
+}
+
+.experience-box {
+    h3 {
+        margin: 0 0 30px;
+        color: $px-dark;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        display: flex;
+        padding: 20px 0;
+        border-top: 2px solid $px-dark;
+        h6 {
+            margin: 0;
+            font-size: 15px;
+            color: $px-dark;
+            max-width: 200px;
+            flex: 0 0 200px;
+            @include down-sm {
+                max-width: 160px;
+                flex: 0 0 160px;
+            }
+        }
+        .eb-right {
+            max-width: calc(100% - 200px);
+            flex: 0 0 calc(100% - 200px);
+            @include down-sm {
+                max-width: calc(100% - 160px);
+                flex: 0 0 calc(100% - 160px);
+            }
+            h5 {
+                font-size: 18px;
+                color: $px-dark;
+                margin: 0;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.experience-user {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    .eu-1 {
+        position: absolute;
+        left: 0;
+        top: 25%;
+    }
+    .eu-2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .avatar {
+        width: 180px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 20px;
+        background-color: $px-gray;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/* Portfolio 
+---------------------*/
+.portfolio-box {
+    border: 2px solid $px-dark;
+    background: $px-white;
+    box-shadow: 0 0 0 0 $px-dark;
+    transition: ease all 0.35s;
+    &:hover {
+        box-shadow: 3px 3px 0 0 $px-dark;
+    }
+    .portfolio-info {
+        border-top: 2px solid $px-dark;
+        padding: 20px;
+        position: relative;
+        h6 {
+            font-size: 20px;
+            color: $px-dark;
+            margin: 0 0 8px;
+        }
+        a {
+            width: 40px;
+            height: 40px;
+            background: $px-theme;
+            color: $px-white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 20px;
+        }
+    }
+}
+
+
+.feature-box-03 {
+    border: 2px solid $px-dark;
+    box-shadow: 0 0 0 0 $px-dark;
+    transition: ease all 0.35s;
+    padding: 40px 35px;
+    margin-bottom: 35px;
+    &:hover {
+        box-shadow: 3px 3px 0 0 $px-dark;
+    }
+    .feature-img {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    .feature-content {
+        text-align: center;
+        position: relative;
+        padding: 30px 0 0;
+        .icons {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: $px-theme2;
+            color: $px-dark;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 13px;
+        }
+        h6 {
+            font-weight: 600;
+            color: $px-dark;
+            margin: 0;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.contact-form {
+    border: 2px solid $px-dark;
+    padding: 35px;
+    background: $px-white;
+    @include down-sm {
+        padding: 25px;
+    }
+    h6 {
+        font-size: 32px;
+        font-weight: 600;
+        color: $px-dark;
+        margin: 0 0 5px;
+    }
+    .lead {
+        font-weight: 400;
+        font-size: 18px;
+        margin: 0 0 30px;
+    }
+    .form-control {
+        border-radius: 0;
+        border: 1px solid $px-dark;
+        box-shadow: none;
+        padding: 0.575rem .75rem;
+    }
+}
+.contact-infos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: flex;
+        position: relative;
+        + li {
+            padding-top: 20px;
+            margin-top: 15px;
+            &:after {
+                content: "";
+                position: absolute;
+                left: 75px;
+                right: 0;
+                top: 0;
+                background: $px-dark;
+                height: 2px;
+            }
+        }
+    }
+    .icon {
+        width: 55px;
+        height: 55px;
+        display: inline-flex;
+        align-items: center;
+        background: $px-theme;
+        color: $px-white;
+        border-radius: 50%;
+        justify-content: center;
+        font-size: 25px;
+    }
+    .col {
+        padding-left: 15px;
+    }
+    h5 {
+        font-size: 17px;
+        margin: 0 0 5px;
+    }
+    p {
+        margin: 0;
+        font-size: 22px;
+        color: $px-dark;
+        font-weight: 600;
+        @include down-sm {
+            font-size: 20px;
+        }
+    }
+}
